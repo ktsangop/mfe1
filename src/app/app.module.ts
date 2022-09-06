@@ -3,12 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { MicroFrontend1Module } from './micro-frontend-1/micro-frontend-1.module';
+
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'what',
     pathMatch: 'full'
+  },
+  {
+    path: 'what',
+    loadChildren: () => import('./micro-frontend-1/micro-frontend-1.module').then(m => m.MicroFrontend1Module)
   }
 ];
 
@@ -18,11 +22,9 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    MicroFrontend1Module,
     RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  // exports: [MicroFrontend1Module]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

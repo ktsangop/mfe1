@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'what',
+    path: '',
     component: Mf1RootComponent
   }
 ];
@@ -18,6 +18,5 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  exports: [Mf1RootComponent]
 })
 export class MicroFrontend1Module { }
