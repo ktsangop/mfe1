@@ -7,11 +7,11 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'what',
+    redirectTo: 'f1-root',
     pathMatch: 'full'
   },
   {
-    path: 'what',
+    path: 'f1-root',
     loadChildren: () => import('./micro-frontend-1/micro-frontend-1.module').then(m => m.MicroFrontend1Module)
   }
 ];
